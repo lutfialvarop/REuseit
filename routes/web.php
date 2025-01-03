@@ -8,6 +8,8 @@ Route::get('/', function () {
 });
 
 Route::prefix('auth')->group(function () {
-    Route::get('login', [AuthController::class, 'login']);
-    Route::get('register', [AuthController::class, 'register']);
+    Route::get('login', [AuthController::class, 'viewLogin']);
+    Route::get('register', [AuthController::class, 'viewRegister']);
+    Route::post('register', [AuthController::class, 'register']);
+    Route::post('login', [AuthController::class, 'login']);
 });
